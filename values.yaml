@@ -1,0 +1,24 @@
+replicaCount: 1
+image:
+  repository: gcr.io/heptio-images/ks-guestbook-demo
+  tag: 0.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+  path: /
+  hosts:
+    - chart-example.local
+  tls: []
+
+resources: {}
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
